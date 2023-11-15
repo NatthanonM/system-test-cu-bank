@@ -5,3 +5,4 @@ report.html
 ./cubank/log.html
 ./cubank/output.xml
 ./cubank/report.html
+*.png
