@@ -67,8 +67,7 @@ TC61: Bill Payment with a Decimal Amount
     # Select the Payment Target
     Click Element    ${PAYMENT_TARGET}/input[2]
     # Fill the Amount Field
-    ${pay_amount}=    Evaluate    int(${amount}) / 2 + 0.1
-    Log To Console    ${pay_amount}
+    ${pay_amount}=    Evaluate    int(${amount}) // 2 + 0.1
     Input Text    ${BILL_PAYMENT_AMOUNT_FIELD}    ${pay_amount}
     Click Button    ${BILL_PAYMENT_BTN}
 
