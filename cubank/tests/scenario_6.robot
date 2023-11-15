@@ -15,10 +15,16 @@ TC54: Bill Payment with Invalid Payment Target
 
     Wait Until Page Contains Element    ${BILL_PAYMENT_CARD}
 
+     # Fill the Amount Field
+    ${pay_amount}=    Evaluate    int(${amount}) // 2
+    Input Text    ${BILL_PAYMENT_AMOUNT_FIELD}    ${pay_amount}
     # Click the Confirm Button
     Click Button    ${BILL_PAYMENT_BTN}
-    # The Balance Should be Equal to the Amount
-    Wait Until Page Contains    ${amount}
+
+    Wait Until Element Is Visible    ${PAYMENT_TARGET}
+    # Check validationMessage Attribute of the Payment Target Choices
+    ${validation_msg}=    Get Element Attribute    ${PAYMENT_TARGET}/input[1]    validationMessage
+    Should Be Equal As Strings    ${validation_msg}    Please select one of these options.
 
     Withdraw    ${WEB_URL}    ${amount}
 
@@ -67,14 +73,16 @@ TC61: Bill Payment with a Decimal Amount
     # Select the Payment Target
     Click Element    ${PAYMENT_TARGET}/input[2]
     # Fill the Amount Field
-    ${pay_amount}=    Evaluate    int(${amount}) / 2 + 0.1
-    Log To Console    ${pay_amount}
+    ${pay_amount}=    Evaluate    int(${amount}) // 2 + 0.1
     Input Text    ${BILL_PAYMENT_AMOUNT_FIELD}    ${pay_amount}
     Click Button    ${BILL_PAYMENT_BTN}
 
-    # The Balance Should be Equal to the Amount
-    Wait Until Page Contains    ${amount}
+    Wait Until Element Is Visible    ${BILL_PAYMENT_AMOUNT_FIELD}
+    # Check validationMessage Attribute of the Payment Target Choices
+    ${validation_msg}=    Get Element Attribute    ${BILL_PAYMENT_AMOUNT_FIELD}    validationMessage
+
+    ${lower_bound}    Evaluate    math.floor(${pay_amount})
+    ${upper_bound}    Evaluate    math.ceil(${pay_amount})
+    Should Be Equal    ${validation_msg}    Please enter a valid value. The two nearest valid values are ${lower_bound} and ${upper_bound}.
 
     Withdraw    ${WEB_URL}    ${amount}
-
-    
