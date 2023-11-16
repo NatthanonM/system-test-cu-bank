@@ -24,6 +24,10 @@ TC51: Bill Payment with Water Charge Payment Target
     Reload Page
     Wait Until Element Is Visible   ${CURRENT_BALANCE}
     ${current_value}=    Get Text    ${CURRENT_BALANCE}
+    ${current_value}=    Convert To Integer    ${current_value}
+    ${check_value}=    Evaluate    ${amount} - ${pay_amount}
+    Should Be Equal    ${current_value}    ${check_value}
+
     Withdraw    ${WEB_URL}    ${current_value}
 
 TC52: Bill Payment with Electric Charge Payment Target
@@ -43,6 +47,10 @@ TC52: Bill Payment with Electric Charge Payment Target
     Reload Page
     Wait Until Element Is Visible   ${CURRENT_BALANCE}
     ${current_value}=    Get Text    ${CURRENT_BALANCE}
+    ${current_value}=    Convert To Integer    ${current_value}
+    ${check_value}=    Evaluate    ${amount} - ${pay_amount}
+    Should Be Equal    ${current_value}    ${check_value}
+
     Withdraw    ${WEB_URL}    ${current_value}
 
 TC53: Bill Payment with Phone Charge Payment Target
@@ -62,6 +70,10 @@ TC53: Bill Payment with Phone Charge Payment Target
     Reload Page
     Wait Until Element Is Visible   ${CURRENT_BALANCE}
     ${current_value}=    Get Text    ${CURRENT_BALANCE}
+    ${current_value}=    Convert To Integer    ${current_value}
+    ${check_value}=    Evaluate    ${amount} - ${pay_amount}
+    Should Be Equal    ${current_value}    ${check_value}
+    
     Withdraw    ${WEB_URL}    ${current_value}
 
 TC55: Bill Payment with the Minimum Amount
