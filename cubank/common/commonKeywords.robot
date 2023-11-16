@@ -1,11 +1,12 @@
 *** Settings ***
 Library     SeleniumLibrary
 Resource    ../data/environment.robot
+Resource    ../data/element.robot
 
 
 *** Keywords ***
 Open Register Page
-    Open Browser    ${WEB_URL}/register/    ${WEB_BROWSER}
+    Open Browser    ${WEB_URL}/register    ${WEB_BROWSER}
     Maximize Browser Window
 
 Register Success
@@ -16,6 +17,6 @@ Register Success
     Input Text    name:firstName    ${firstName}
     Input Text    name:lastName    ${lastName}
 
-    Click Button    //*[@id="root"]/div/div/div/form/button
+    Click Button    ${REGISTER_BTN}
 
     Alert Should Be Present    success    ACCEPT
