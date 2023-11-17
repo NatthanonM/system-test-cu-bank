@@ -3,7 +3,7 @@ Library    SeleniumLibrary
 Resource    ../testdata/environment.robot
 
 *** Keywords ***
-Register Failed
+Register 
     [Arguments]    ${account_number}    ${password}    ${first_name}    ${last_name}    ${have_first_name}=${True}    ${have_last_name}=${True}
     Open Browser    ${WEB_URL}/register    ${WEB_BROWSER}
     Maximize Browser Window
