@@ -14,6 +14,7 @@ Login
     # Click the Login Btn
     Click Button    ${LOGIN_BTN}
 
+    Sleep    1
     # Wait Until the Account Page is loaded
     Wait Until Location Is    ${WEB_URL}/account/
 
@@ -31,8 +32,8 @@ Deposit
     Input Text    ${DEPOSIT_AMOUNT_FIELD}    ${amount}
     # Click the Confirm Button
     Click Element    ${DEPOSIT_BTN}
-    Reload Page
-
+   
+    Sleep    1
     Wait Until Location Is    ${web_url}/account/
     ${amount}=    Convert To Integer    ${amount}
     ${updated_value}=    Get Text    ${CURRENT_BALANCE}
@@ -49,8 +50,8 @@ Withdraw
     Input Text    ${WITHDRAW_AMOUNT_FIELD}    ${amount}
     # Click the Confirm Button
     Click Element    ${WITHDRAW_BTN}
-    Reload Page
 
+    Sleep    1
     Wait Until Location Is    ${web_url}/account/
     ${amount}=    Convert To Integer    ${amount}
     ${updated_value}=    Get Text    ${CURRENT_BALANCE}
