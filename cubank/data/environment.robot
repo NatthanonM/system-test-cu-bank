@@ -1,6 +1,6 @@
 *** Variables ***
-${WEB_URL}    http://localhost:3000
-${WEB_BROWSER}    chrome
+${WEB_URL}              http://localhost:3000
+${WEB_BROWSER}          chrome
 
-${ACCOUNT_NUMBER}    3333333333
-${PASSWORD}    3333
+${ACCOUNT_NUMBER}       1234567890
+${PASSWORD}             1234
