@@ -16,3 +16,5 @@ ${test_data_transfer_2}                     2
 ${test_data_transfer_24}                    24
 ${test_data_transfer_25}                    25
 ${test_data_error_message}                  your balance isn't not enough
+${ACCOUNT_NUMBER}                           1234567890
+${PASSWORD}                                 1234
