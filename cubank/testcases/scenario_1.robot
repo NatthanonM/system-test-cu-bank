@@ -2,6 +2,7 @@
 Library    SeleniumLibrary
 
 Resource    ../keywords/commonKeywords.robot
+Resource    ../testdata/environment.robot
 
 Test Teardown    Close All Browsers
 
@@ -17,8 +18,20 @@ TC3: Register with min+, max+ Account Number
     Wait Until Page Contains    Please fill accountId ${SPACE}10 digits
 
 TC4: Register with Account Number that is already existed
-    Register    7000000000    1234    John    Doe
-    Register    7000000000    1234    John    Doe
+    ${account_number}    Set Variable    700000000
+    ${password}    Set Variable    1234
+    ${first_name}    Set Variable    John
+    ${last_name}    Set Variable    Doe
+    Register    ${account_number}   ${password}    ${first_name}    ${last_name}
+    sleep    3
+    Handle Alert
+    sleep    3
+    Go To    ${WEB_URL}/register
+    Input Text    //*[@id='accountId']    ${account_number}
+    Input Text    //*[@id='password']    ${password}
+    Input Text    //*[@id='firstName']    ${first_name}
+    Input Text    //*[@id='lastName']    ${last_name}
+    Click Element    //*[@cid='rc']
     Wait Until Page Contains Element    //*[@cid='register-error-mes']
     Wait Until Page Contains    Account ID already existed
 
