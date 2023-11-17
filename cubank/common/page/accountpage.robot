@@ -28,7 +28,10 @@ Input widthdraw with exceed amount of balance
     Input Text    //input[@cid='w1']    ${exceed_balance}
 
 Input widthdraw with not integer
-    Input Text    //input[@cid='w1']    19.98
+    Input Text    //input[@cid='w1']    ${test_data_withdraw_not_int}
+
+Input widthdraw with zero number
+    Input Text    //input[@cid='w1']    0
 
 Click confirm deposit
     Click Element    //button[@cid='dc']
