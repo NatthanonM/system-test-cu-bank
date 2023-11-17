@@ -1,10 +1,13 @@
 *** Settings ***
-Library    SeleniumLibrary
-Suite Setup    Set Log Level    DEBUG
-Resource    ../../testdata/environment.robot
-Resource    ../../keywords/ui/page/homepage.robot
-Resource    ../../keywords/ui/page/accountpage.robot
-Test Teardown    Close All Browsers
+Library             SeleniumLibrary
+Resource            ../data/environment.robot
+Resource            ../common/page/accountpage.robot
+Resource            ../common/page/homepage.robot
+Resource            ../common/commonKeywords.robot
+
+Suite Setup         Set Log Level    DEBUG
+Test Teardown       Close All Browsers
+
 
 *** Test Cases ***
 Scenario4 test 1 widthdraw with same amout of balance (T16, TC26)
@@ -89,5 +92,3 @@ Scenario4 test 5 widthdraw with not integer (T16, TC26, TC30)
     Input widthdraw with not integer
     Click confirm widthdraw
     sleep    5
-
-    
