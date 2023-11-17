@@ -1,7 +1,8 @@
-*** Setting ***
-Resource    ../../../keywords/ui/common/commonKeywords.robot
-Resource    ../../../testdata/environment.robot
-Resource    ../../../testdata/test_data.robot
+*** Settings ***
+Library     SeleniumLibrary
+Resource    ../commonKeywords.robot
+Resource    ../../data/environment.robot
+
 
 *** Keywords ***
 Wait deposit feature load complete
@@ -15,8 +16,10 @@ Wait transfer feature load complete
 
 Input deposit 1
     Input text    //input[@cid='d1']    ${test_data_deposit_1}
+
 Input deposit 2
     Input text    //input[@cid='d1']    ${test_data_deposit_2}
+
 Input deposit 10
     Input text    //input[@cid='d1']    ${test_data_deposit_10}
 
@@ -49,13 +52,13 @@ Input transfer 25
     Input Text    //input[@cid='t2']    ${test_data_transfer_25}
 
 Click confirm deposit
-    Click Element  //button[@cid='dc']
+    Click Element    //button[@cid='dc']
 
 Click confirm widthdraw
-    Click Element  //button[@cid='wc']
+    Click Element    //button[@cid='wc']
 
 Click confirm transfer
-    Click Element  //button[@cid='tc']
+    Click Element    //button[@cid='tc']
 
 Check balance
     ${balance}=    Get Text    //h2[contains(text(), 'Balance:')]/following-sibling::h1[1]
@@ -65,7 +68,7 @@ Check balance
 
 Check widthdraw error response
     Wait Until Element Is Visible    //label[@cid="withdraw-error-mes"]
-    ${error_message}    Get Text    //label[@cid="withdraw-error-mes"]
+    ${error_message}=    Get Text    //label[@cid="withdraw-error-mes"]
     Should Be Equal    ${error_message}    ${test_data_error_message}
 
 Predefine set balance to 15
@@ -114,17 +117,18 @@ Predefine add balnce calculation
     Log To Console    The Balance is: ${balance}
     ${current_balance}=    Get Text    //h2[contains(text(), 'Balance:')]/following-sibling::h1[1]
     ${current_balance}=    Convert To Integer    ${current_balance}
-    ${add_balance}=    Evaluate   ${balance} - ${current_balance}
+    ${add_balance}=    Evaluate    ${balance} - ${current_balance}
     Set Global Variable    ${add_balance}
     Log To Console    Deposit/Withdraw is: ${add_balance}
 
 Predefine check criterion
-    Run Keyword If    ${add_balance} > 0
-    ...    Predefine deposit balance
-    ...    ELSE IF    ${add_balance} == 0
-    ...    Predefine nothing
-    ...    ELSE
-    ...    Predefine withdraw balance
+    IF    ${add_balance} > 0
+        Predefine deposit balance
+    ELSE IF    ${add_balance} == 0
+        Predefine nothing
+    ELSE
+        Predefine withdraw balance
+    END
 
 Predefine deposit balance
     Input Text    //input[@cid='d1']    ${add_balance}
@@ -138,12 +142,8 @@ Predefine withdraw balance
     Click Element    //button[@cid='wc']
 
 Predefine nothing
-    Run Keyword If    ${add_balance} == 0
-    ...    Log To Console    No need to deposit/withdraw
+    IF    ${add_balance} == 0    Log To Console    No need to deposit/withdraw
 
 Scroll To Top Of Page
     Wait deposit feature load complete
     Execute JavaScript    window.scrollTo(0, 0)
-
-    
-    

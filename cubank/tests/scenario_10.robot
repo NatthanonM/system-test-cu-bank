@@ -1,10 +1,13 @@
 *** Settings ***
-Library    SeleniumLibrary
-Suite Setup    Set Log Level    DEBUG
-Resource    ../../testdata/environment.robot
-Resource    ../../keywords/ui/page/homepage.robot
-Resource    ../../keywords/ui/page/accountpage.robot
-Test Teardown    Close All Browsers
+Library             SeleniumLibrary
+Resource            ../data/environment.robot
+Resource            ../common/page/accountpage.robot
+Resource            ../common/page/homepage.robot
+Resource            ../common/commonKeywords.robot
+
+Suite Setup         Set Log Level    DEBUG
+Test Teardown       Close All Browsers
+
 
 *** Test Cases ***
 # ------Deposit 1 TC26-------
@@ -99,6 +102,7 @@ Scenario10 test 5 login pass deposit pass transfer pass (TC16, TC26, TC49)
     sleep    5
 
 # ------Deposit 2 TC27-------
+
 Scenario10 test 6 login pass deposit pass transfer pass (TC16, TC27, TC38)
     [Tags]    valid
     Open browser CU bank login
@@ -190,6 +194,7 @@ Scenario10 test 10 login pass deposit pass transfer pass (TC16, TC27, TC49)
     sleep    5
 
 # ------Deposit 3 TC28-------
+
 Scenario10 test 11 login pass deposit pass transfer pass (TC16, TC28, TC38)
     [Tags]    valid
     Open browser CU bank login
@@ -279,6 +284,3 @@ Scenario10 test 1 login pass deposit pass transfer pass (TC16, TC28, TC49)
     Click confirm transfer
     Scroll To Top Of Page
     sleep    5
-
-
-    
