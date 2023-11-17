@@ -1,7 +1,8 @@
-*** Setting ***
-Resource    ../../../keywords/ui/common/commonKeywords.robot
-Resource    ../../../testdata/environment.robot
-Resource    ../../../testdata/test_data.robot
+*** Settings ***
+Library     SeleniumLibrary
+Resource    ../commonKeywords.robot
+Resource    ../../data/environment.robot
+
 
 *** Keywords ***
 Wait deposit feature load complete
@@ -12,8 +13,10 @@ Wait widthdraw feature load complete
 
 Input deposit 1
     Input text    //input[@cid='d1']    ${test_data_deposit_1}
+
 Input deposit 2
     Input text    //input[@cid='d1']    ${test_data_deposit_2}
+
 Input deposit 10
     Input text    //input[@cid='d1']    ${test_data_deposit_10}
 
@@ -31,10 +34,10 @@ Input widthdraw with zero number
     Input Text    //input[@cid='w1']    0
 
 Click confirm deposit
-    Click Element  //button[@cid='dc']
+    Click Element    //button[@cid='dc']
 
 Click confirm widthdraw
-    Click Element  //button[@cid='wc']
+    Click Element    //button[@cid='wc']
 
 Check balance
     ${balance}=    Get Text    //h2[contains(text(), 'Balance:')]/following-sibling::h1[1]
@@ -44,5 +47,5 @@ Check balance
 
 Check widthdraw error response
     Wait Until Element Is Visible    //label[@cid="withdraw-error-mes"]
-    ${error_message}    Get Text    //label[@cid="withdraw-error-mes"]
-     Should Be Equal    ${error_message}    ${test_data_error_message}
+    ${error_message}=    Get Text    //label[@cid="withdraw-error-mes"]
+    Should Be Equal    ${error_message}    ${test_data_error_message}
