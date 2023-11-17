@@ -12,6 +12,7 @@ TC51: Bill Payment with Water Charge Payment Target
     Login    ${WEB_URL}    ${WEB_BROWSER}    ${ACCOUNT_NUMBER}    ${PASSWORD} 
     Deposit    ${WEB_URL}    ${amount}
 
+    Sleep    1
     Wait Until Element Is Visible    ${BILL_PAYMENT_CARD}
 
     # Select the Payment Target
@@ -21,7 +22,7 @@ TC51: Bill Payment with Water Charge Payment Target
     Input Text    ${BILL_PAYMENT_AMOUNT_FIELD}    ${pay_amount}
     Click Button    ${BILL_PAYMENT_BTN}
 
-    Reload Page
+    Sleep    2
     Wait Until Element Is Visible   ${CURRENT_BALANCE}
     ${current_value}=    Get Text    ${CURRENT_BALANCE}
     ${current_value}=    Convert To Integer    ${current_value}
@@ -35,6 +36,7 @@ TC52: Bill Payment with Electric Charge Payment Target
     Login    ${WEB_URL}    ${WEB_BROWSER}    ${ACCOUNT_NUMBER}    ${PASSWORD} 
     Deposit    ${WEB_URL}    ${amount}
 
+    Sleep    1
     Wait Until Element Is Visible    ${BILL_PAYMENT_CARD}
 
     # Select the Payment Target
@@ -44,7 +46,7 @@ TC52: Bill Payment with Electric Charge Payment Target
     Input Text    ${BILL_PAYMENT_AMOUNT_FIELD}    ${pay_amount}
     Click Button    ${BILL_PAYMENT_BTN}
 
-    Reload Page
+    Sleep    2
     Wait Until Element Is Visible   ${CURRENT_BALANCE}
     ${current_value}=    Get Text    ${CURRENT_BALANCE}
     ${current_value}=    Convert To Integer    ${current_value}
@@ -58,6 +60,7 @@ TC53: Bill Payment with Phone Charge Payment Target
     Login    ${WEB_URL}    ${WEB_BROWSER}    ${ACCOUNT_NUMBER}    ${PASSWORD} 
     Deposit    ${WEB_URL}    ${amount}
 
+    Sleep    1
     Wait Until Element Is Visible    ${BILL_PAYMENT_CARD}
 
     # Select the Payment Target
@@ -67,7 +70,7 @@ TC53: Bill Payment with Phone Charge Payment Target
     Input Text    ${BILL_PAYMENT_AMOUNT_FIELD}    ${pay_amount}
     Click Button    ${BILL_PAYMENT_BTN}
 
-    Reload Page
+    Sleep    2
     Wait Until Element Is Visible   ${CURRENT_BALANCE}
     ${current_value}=    Get Text    ${CURRENT_BALANCE}
     ${current_value}=    Convert To Integer    ${current_value}
@@ -81,6 +84,7 @@ TC55: Bill Payment with the Minimum Amount
     Login    ${WEB_URL}    ${WEB_BROWSER}    ${ACCOUNT_NUMBER}    ${PASSWORD} 
     Deposit    ${WEB_URL}    ${amount}
 
+    Sleep    1
     Wait Until Element Is Visible    ${BILL_PAYMENT_CARD}
 
     # Select the Payment Target
@@ -89,7 +93,7 @@ TC55: Bill Payment with the Minimum Amount
     Input Text    ${BILL_PAYMENT_AMOUNT_FIELD}    1
     Click Button    ${BILL_PAYMENT_BTN}
 
-    Reload Page
+    Sleep    2
     Wait Until Element Is Visible   ${CURRENT_BALANCE}
     ${current_value}=    Get Text    ${CURRENT_BALANCE}
     ${current_value}=    Convert To Integer    ${current_value}
@@ -103,6 +107,7 @@ TC57: Bill Payment with min+ Amount
     Login    ${WEB_URL}    ${WEB_BROWSER}    ${ACCOUNT_NUMBER}    ${PASSWORD} 
     Deposit    ${WEB_URL}    ${amount}
 
+    Sleep    1
     Wait Until Element Is Visible    ${BILL_PAYMENT_CARD}
 
     # Select the Payment Target
@@ -111,7 +116,7 @@ TC57: Bill Payment with min+ Amount
     Input Text    ${BILL_PAYMENT_AMOUNT_FIELD}    2
     Click Button    ${BILL_PAYMENT_BTN}
 
-    Reload Page
+    Sleep    2
     Wait Until Element Is Visible   ${CURRENT_BALANCE}
     ${current_value}=    Get Text    ${CURRENT_BALANCE}
     ${current_value}=    Convert To Integer    ${current_value}
@@ -125,6 +130,7 @@ TC58: Bill Payment with Maximum Amount
     Login    ${WEB_URL}    ${WEB_BROWSER}    ${ACCOUNT_NUMBER}    ${PASSWORD} 
     Deposit    ${WEB_URL}    ${amount}
 
+    Sleep    1
     Wait Until Element Is Visible    ${BILL_PAYMENT_CARD}
 
     # Select the Payment Target
@@ -133,7 +139,7 @@ TC58: Bill Payment with Maximum Amount
     Input Text    ${BILL_PAYMENT_AMOUNT_FIELD}    ${amount}
     Click Button    ${BILL_PAYMENT_BTN}
 
-    Reload Page
+    Sleep    2
     Wait Until Element Is Visible   ${CURRENT_BALANCE}
     ${current_value}=    Get Text    ${CURRENT_BALANCE}
     Should Be Equal    ${current_value}    0
@@ -145,6 +151,7 @@ TC59: Bill Payment with Max- Amount
     Login    ${WEB_URL}    ${WEB_BROWSER}    ${ACCOUNT_NUMBER}    ${PASSWORD} 
     Deposit    ${WEB_URL}    ${amount}
 
+    Sleep    1
     Wait Until Element Is Visible    ${BILL_PAYMENT_CARD}
     ${pay_amount}=    Evaluate    ${amount} - 1
 
@@ -154,7 +161,7 @@ TC59: Bill Payment with Max- Amount
     Input Text    ${BILL_PAYMENT_AMOUNT_FIELD}    ${pay_amount}
     Click Button    ${BILL_PAYMENT_BTN}
 
-    Reload Page
+    Sleep    2
     Wait Until Element Is Visible   ${CURRENT_BALANCE}
     ${current_value}=    Get Text    ${CURRENT_BALANCE}
     Should Be Equal    ${current_value}    1
