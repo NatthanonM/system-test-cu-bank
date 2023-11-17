@@ -86,3 +86,18 @@ TC61: Bill Payment with a Decimal Amount
     Should Be Equal    ${validation_msg}    Please enter a valid value. The two nearest valid values are ${lower_bound} and ${upper_bound}.
 
     Withdraw    ${WEB_URL}    ${amount}
+
+TC64: Bill Payment with Empty Amount
+    Login    ${WEB_URL}    ${WEB_BROWSER}    ${ACCOUNT_NUMBER}    ${PASSWORD} 
+
+    Wait Until Page Contains Element    ${BILL_PAYMENT_CARD}
+
+    # Select the Payment Target
+    Click Element    ${PAYMENT_TARGET}/input[2]
+    Click Button    ${BILL_PAYMENT_BTN}
+
+    Wait Until Element Is Visible    ${BILL_PAYMENT_AMOUNT_FIELD}
+    # Check validationMessage Attribute of the Payment Target Choices
+    ${validation_msg}=    Get Element Attribute    ${BILL_PAYMENT_AMOUNT_FIELD}    validationMessage
+
+    Should Be Equal    ${validation_msg}    Please fill out this field.
