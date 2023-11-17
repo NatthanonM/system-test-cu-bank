@@ -18,7 +18,7 @@ TC3: Register with min+, max+ Account Number
     Wait Until Page Contains    Please fill accountId ${SPACE}10 digits
 
 TC4: Register with Account Number that is already existed
-    ${account_number}    Set Variable    700000000
+    ${account_number}    Set Variable    7000000000
     ${password}    Set Variable    1234
     ${first_name}    Set Variable    John
     ${last_name}    Set Variable    Doe
