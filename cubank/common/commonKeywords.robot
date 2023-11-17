@@ -9,6 +9,10 @@ Open Login Page
     Open Browser    ${WEB_URL}    ${WEB_BROWSER}
     Maximize Browser Window
 
+Open Register Page
+    Open Browser    ${WEB_URL}/register    ${WEB_BROWSER}
+    Maximize Browser Window
+
 Login Failed
     [Arguments]
     ...    ${accountId}
@@ -31,3 +35,15 @@ Login Failed
         ${validationMessage}=    Get Element Attribute    ${errfield}    validationMessage
         Should Be Equal    ${validationMessage}    ${errmsg}
     END
+
+Register Success
+    [Arguments]    ${accountId}    ${password}    ${firstName}    ${lastName}
+
+    Input Text    name:accountId    ${accountId}
+    Input Text    name:password    ${password}
+    Input Text    name:firstName    ${firstName}
+    Input Text    name:lastName    ${lastName}
+
+    Click Button    ${REGISTER_BTN}
+
+    Alert Should Be Present    success    ACCEPT
