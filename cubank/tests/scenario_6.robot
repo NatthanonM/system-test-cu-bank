@@ -7,7 +7,7 @@ Test Teardown       Close All Browsers
 
 
 *** Test Cases ***
-TC56: Bill Payment with Invalid Payment Target
+S6.1: TC16 (login success), TC56 (bill payment failed with min-, max+ target payment)
     ${amount}    Set Variable    50
 
     Login    ${WEB_URL}    ${WEB_BROWSER}    ${ACCOUNT_NUMBER}    ${PASSWORD}
@@ -30,7 +30,7 @@ TC56: Bill Payment with Invalid Payment Target
 
     Withdraw    ${WEB_URL}    ${amount}
 
-TC58: Bill Payment with Amount = 0
+S6.2: TC16 (login success), TC58 (bill payment failed with min- amount)
     ${amount}    Set Variable    50
     Login    ${WEB_URL}    ${WEB_BROWSER}    ${ACCOUNT_NUMBER}    ${PASSWORD}
     Deposit    ${WEB_URL}    ${amount}
@@ -49,7 +49,7 @@ TC58: Bill Payment with Amount = 0
     Wait Until Page Contains    Please put only number
     Withdraw    ${WEB_URL}    ${amount}
 
-TC62: Bill Payment with Insufficient Balance
+S6.3: TC16 (login success), TC62 (bill payment failed with max+ amount)
     ${amount}    Set Variable    50
     Login    ${WEB_URL}    ${WEB_BROWSER}    ${ACCOUNT_NUMBER}    ${PASSWORD}
     Deposit    ${WEB_URL}    ${amount}
@@ -69,7 +69,7 @@ TC62: Bill Payment with Insufficient Balance
     Wait Until Page Contains    your balance isn't not enough
     Withdraw    ${WEB_URL}    ${amount}
 
-TC63: Bill Payment with a Decimal Amount
+S6.4: TC16 (login success), TC63 (bill payment failed with a decimal amount)
     ${amount}    Set Variable    50
     Login    ${WEB_URL}    ${WEB_BROWSER}    ${ACCOUNT_NUMBER}    ${PASSWORD}
     Deposit    ${WEB_URL}    ${amount}
@@ -97,7 +97,7 @@ TC63: Bill Payment with a Decimal Amount
 
     Withdraw    ${WEB_URL}    ${amount}
 
-TC64: Bill Payment with Empty Amount
+S6.5: TC16 (login success), TC64 (bill payment failed with empty amount)
     Login    ${WEB_URL}    ${WEB_BROWSER}    ${ACCOUNT_NUMBER}    ${PASSWORD}
 
     Sleep    1
