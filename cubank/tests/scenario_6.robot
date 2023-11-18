@@ -97,7 +97,7 @@ S6.4: TC16 (login success), TC63 (bill payment failed with a decimal amount)
 
     Withdraw    ${WEB_URL}    ${amount}
 
-S6.5: TC16 (login success), TC63 (bill payment failed with empty amount)
+S6.5: TC16 (login success), TC64 (bill payment failed with empty amount)
     Login    ${WEB_URL}    ${WEB_BROWSER}    ${ACCOUNT_NUMBER}    ${PASSWORD}
 
     Sleep    1
