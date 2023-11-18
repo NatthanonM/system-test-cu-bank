@@ -7,7 +7,7 @@ Test Teardown       Close All Browsers
 
 
 *** Test Cases ***
-TC53: Bill Payment with Water Charge Payment Target
+S7.1: TC16 (login success), TC53 (bill payment success with Water Charge payment target)
     ${amount}=    Set Variable    50
     Login    ${WEB_URL}    ${WEB_BROWSER}    ${ACCOUNT_NUMBER}    ${PASSWORD}
     Deposit    ${WEB_URL}    ${amount}
@@ -31,7 +31,7 @@ TC53: Bill Payment with Water Charge Payment Target
 
     Withdraw    ${WEB_URL}    ${current_value}
 
-TC54: Bill Payment with Electric Charge Payment Target
+S7.2: TC16 (login success), TC54 (bill payment success with Electric Charge payment target)
     ${amount}=    Set Variable    50
     Login    ${WEB_URL}    ${WEB_BROWSER}    ${ACCOUNT_NUMBER}    ${PASSWORD}
     Deposit    ${WEB_URL}    ${amount}
@@ -55,7 +55,7 @@ TC54: Bill Payment with Electric Charge Payment Target
 
     Withdraw    ${WEB_URL}    ${current_value}
 
-TC55: Bill Payment with Phone Charge Payment Target
+S7.3: TC16 (login success), TC55 (bill payment success with Phone Charge payment target)
     ${amount}=    Set Variable    50
     Login    ${WEB_URL}    ${WEB_BROWSER}    ${ACCOUNT_NUMBER}    ${PASSWORD}
     Deposit    ${WEB_URL}    ${amount}
@@ -79,7 +79,7 @@ TC55: Bill Payment with Phone Charge Payment Target
 
     Withdraw    ${WEB_URL}    ${current_value}
 
-TC57: Bill Payment with the Minimum Amount
+S7.4: TC16 (login success), TC57 (bill payment success with min amount)
     ${amount}=    Set Variable    50
     Login    ${WEB_URL}    ${WEB_BROWSER}    ${ACCOUNT_NUMBER}    ${PASSWORD}
     Deposit    ${WEB_URL}    ${amount}
@@ -102,7 +102,7 @@ TC57: Bill Payment with the Minimum Amount
 
     Withdraw    ${WEB_URL}    ${current_value}
 
-TC59: Bill Payment with min+ Amount
+S7.5: TC16 (login success), TC59 (bill payment success with min+ amount)
     ${amount}=    Set Variable    50
     Login    ${WEB_URL}    ${WEB_BROWSER}    ${ACCOUNT_NUMBER}    ${PASSWORD}
     Deposit    ${WEB_URL}    ${amount}
@@ -125,7 +125,7 @@ TC59: Bill Payment with min+ Amount
 
     Withdraw    ${WEB_URL}    ${current_value}
 
-TC60: Bill Payment with Maximum Amount
+S7.6: TC16 (login success), TC60 (bill payment success with max amount)
     ${amount}=    Set Variable    50
     Login    ${WEB_URL}    ${WEB_BROWSER}    ${ACCOUNT_NUMBER}    ${PASSWORD}
     Deposit    ${WEB_URL}    ${amount}
@@ -146,7 +146,7 @@ TC60: Bill Payment with Maximum Amount
 
     Withdraw    ${WEB_URL}    ${current_value}
 
-TC61: Bill Payment with Max- Amount
+S7.7: TC16 (login success), TC61 (bill payment success with max- amount)
     ${amount}=    Set Variable    50
     Login    ${WEB_URL}    ${WEB_BROWSER}    ${ACCOUNT_NUMBER}    ${PASSWORD}
     Deposit    ${WEB_URL}    ${amount}
