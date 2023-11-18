@@ -18,5 +18,5 @@ TC21: Login with min- 3 digits Password    5012345678    198    Please fill pass
 TC22: Login with max+ 5 digits Password    5012345678    19890    Please fill password 4 digits
 TC23: Login with string Password    5012345678    198X    Please put password only number
 TC24: Login with incorrect Password    5678901234    1234    Password Incorrect
-TC62: Login with empty Account Number    ${EMPTY}    1234    Please fill out this field.    ${True}    ${LOGIN_ACCOUNT_NUMBER_FIELD}
-TC63: Login with empty Password    5012345678    ${EMPTY}    Please fill out this field.    ${True}    ${LOGIN_PASSWORD_FIELD}
+TC25: Login with empty Account Number    ${EMPTY}    1234    Please fill out this field.    ${True}    ${LOGIN_ACCOUNT_NUMBER_FIELD}
+TC26: Login with empty Password    5012345678    ${EMPTY}    Please fill out this field.    ${True}    ${LOGIN_PASSWORD_FIELD}

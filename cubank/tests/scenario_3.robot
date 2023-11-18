@@ -8,10 +8,10 @@ Test Teardown       Close All Browsers
 
 
 *** Test Cases ***
-TC25: Deposit with min- Amount
+TC27: Deposit with min- Amount
     ${amount}    Set Variable    0
 
-    Login    ${WEB_URL}    ${WEB_BROWSER}    ${ACCOUNT_NUMBER_S3}    ${PASSWORD_S3}
+    Login    ${WEB_URL}    ${WEB_BROWSER}    ${ACCOUNT_NUMBER}    ${PASSWORD}
 
     Wait Until Page Contains Element    ${DEPOSIT_CARD}
 
@@ -21,10 +21,10 @@ TC25: Deposit with min- Amount
     Wait Until Page Contains Element    //*[@cid='deposite-error-mes']
     Wait Until Page Contains    Please put only number
 
-TC29: Deposit with floating number Amount
+TC31: Deposit with floating number Amount
     ${amount}    Set Variable    19.89
 
-    Login    ${WEB_URL}    ${WEB_BROWSER}    ${ACCOUNT_NUMBER_S3}    ${PASSWORD_S3}
+    Login    ${WEB_URL}    ${WEB_BROWSER}    ${ACCOUNT_NUMBER}    ${PASSWORD}
 
     Wait Until Page Contains Element    ${DEPOSIT_CARD}
 

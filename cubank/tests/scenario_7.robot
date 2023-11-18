@@ -1,15 +1,15 @@
 *** Settings ***
-Library    SeleniumLibrary
+Library             SeleniumLibrary
+Resource            ../common/commonKeywords.robot
+Resource            ../data/environment.robot
 
-Resource    ../common/commonKeywords.robot
-Resource    ../data/environment.robot
+Test Teardown       Close All Browsers
 
-Test Teardown    Close All Browsers
 
 *** Test Cases ***
-TC51: Bill Payment with Water Charge Payment Target
-    ${amount}    Set Variable    50
-    Login    ${WEB_URL}    ${WEB_BROWSER}    ${ACCOUNT_NUMBER}    ${PASSWORD} 
+TC53: Bill Payment with Water Charge Payment Target
+    ${amount}=    Set Variable    50
+    Login    ${WEB_URL}    ${WEB_BROWSER}    ${ACCOUNT_NUMBER}    ${PASSWORD}
     Deposit    ${WEB_URL}    ${amount}
 
     Sleep    1
@@ -23,7 +23,7 @@ TC51: Bill Payment with Water Charge Payment Target
     Click Button    ${BILL_PAYMENT_BTN}
 
     Sleep    2
-    Wait Until Element Is Visible   ${CURRENT_BALANCE}
+    Wait Until Element Is Visible    ${CURRENT_BALANCE}
     ${current_value}=    Get Text    ${CURRENT_BALANCE}
     ${current_value}=    Convert To Integer    ${current_value}
     ${check_value}=    Evaluate    ${amount} - ${pay_amount}
@@ -31,9 +31,9 @@ TC51: Bill Payment with Water Charge Payment Target
 
     Withdraw    ${WEB_URL}    ${current_value}
 
-TC52: Bill Payment with Electric Charge Payment Target
-    ${amount}    Set Variable    50
-    Login    ${WEB_URL}    ${WEB_BROWSER}    ${ACCOUNT_NUMBER}    ${PASSWORD} 
+TC54: Bill Payment with Electric Charge Payment Target
+    ${amount}=    Set Variable    50
+    Login    ${WEB_URL}    ${WEB_BROWSER}    ${ACCOUNT_NUMBER}    ${PASSWORD}
     Deposit    ${WEB_URL}    ${amount}
 
     Sleep    1
@@ -47,7 +47,7 @@ TC52: Bill Payment with Electric Charge Payment Target
     Click Button    ${BILL_PAYMENT_BTN}
 
     Sleep    2
-    Wait Until Element Is Visible   ${CURRENT_BALANCE}
+    Wait Until Element Is Visible    ${CURRENT_BALANCE}
     ${current_value}=    Get Text    ${CURRENT_BALANCE}
     ${current_value}=    Convert To Integer    ${current_value}
     ${check_value}=    Evaluate    ${amount} - ${pay_amount}
@@ -55,9 +55,9 @@ TC52: Bill Payment with Electric Charge Payment Target
 
     Withdraw    ${WEB_URL}    ${current_value}
 
-TC53: Bill Payment with Phone Charge Payment Target
-    ${amount}    Set Variable    50
-    Login    ${WEB_URL}    ${WEB_BROWSER}    ${ACCOUNT_NUMBER}    ${PASSWORD} 
+TC55: Bill Payment with Phone Charge Payment Target
+    ${amount}=    Set Variable    50
+    Login    ${WEB_URL}    ${WEB_BROWSER}    ${ACCOUNT_NUMBER}    ${PASSWORD}
     Deposit    ${WEB_URL}    ${amount}
 
     Sleep    1
@@ -71,17 +71,17 @@ TC53: Bill Payment with Phone Charge Payment Target
     Click Button    ${BILL_PAYMENT_BTN}
 
     Sleep    2
-    Wait Until Element Is Visible   ${CURRENT_BALANCE}
+    Wait Until Element Is Visible    ${CURRENT_BALANCE}
     ${current_value}=    Get Text    ${CURRENT_BALANCE}
     ${current_value}=    Convert To Integer    ${current_value}
     ${check_value}=    Evaluate    ${amount} - ${pay_amount}
     Should Be Equal    ${current_value}    ${check_value}
-    
+
     Withdraw    ${WEB_URL}    ${current_value}
 
-TC55: Bill Payment with the Minimum Amount
-    ${amount}    Set Variable    50
-    Login    ${WEB_URL}    ${WEB_BROWSER}    ${ACCOUNT_NUMBER}    ${PASSWORD} 
+TC57: Bill Payment with the Minimum Amount
+    ${amount}=    Set Variable    50
+    Login    ${WEB_URL}    ${WEB_BROWSER}    ${ACCOUNT_NUMBER}    ${PASSWORD}
     Deposit    ${WEB_URL}    ${amount}
 
     Sleep    1
@@ -94,7 +94,7 @@ TC55: Bill Payment with the Minimum Amount
     Click Button    ${BILL_PAYMENT_BTN}
 
     Sleep    2
-    Wait Until Element Is Visible   ${CURRENT_BALANCE}
+    Wait Until Element Is Visible    ${CURRENT_BALANCE}
     ${current_value}=    Get Text    ${CURRENT_BALANCE}
     ${current_value}=    Convert To Integer    ${current_value}
     ${check_value}=    Evaluate    ${amount} - 1
@@ -102,9 +102,9 @@ TC55: Bill Payment with the Minimum Amount
 
     Withdraw    ${WEB_URL}    ${current_value}
 
-TC57: Bill Payment with min+ Amount
-    ${amount}    Set Variable    50
-    Login    ${WEB_URL}    ${WEB_BROWSER}    ${ACCOUNT_NUMBER}    ${PASSWORD} 
+TC59: Bill Payment with min+ Amount
+    ${amount}=    Set Variable    50
+    Login    ${WEB_URL}    ${WEB_BROWSER}    ${ACCOUNT_NUMBER}    ${PASSWORD}
     Deposit    ${WEB_URL}    ${amount}
 
     Sleep    1
@@ -117,7 +117,7 @@ TC57: Bill Payment with min+ Amount
     Click Button    ${BILL_PAYMENT_BTN}
 
     Sleep    2
-    Wait Until Element Is Visible   ${CURRENT_BALANCE}
+    Wait Until Element Is Visible    ${CURRENT_BALANCE}
     ${current_value}=    Get Text    ${CURRENT_BALANCE}
     ${current_value}=    Convert To Integer    ${current_value}
     ${check_value}=    Evaluate    ${amount} - 2
@@ -125,9 +125,9 @@ TC57: Bill Payment with min+ Amount
 
     Withdraw    ${WEB_URL}    ${current_value}
 
-TC58: Bill Payment with Maximum Amount
-    ${amount}    Set Variable    50
-    Login    ${WEB_URL}    ${WEB_BROWSER}    ${ACCOUNT_NUMBER}    ${PASSWORD} 
+TC60: Bill Payment with Maximum Amount
+    ${amount}=    Set Variable    50
+    Login    ${WEB_URL}    ${WEB_BROWSER}    ${ACCOUNT_NUMBER}    ${PASSWORD}
     Deposit    ${WEB_URL}    ${amount}
 
     Sleep    1
@@ -140,15 +140,15 @@ TC58: Bill Payment with Maximum Amount
     Click Button    ${BILL_PAYMENT_BTN}
 
     Sleep    2
-    Wait Until Element Is Visible   ${CURRENT_BALANCE}
+    Wait Until Element Is Visible    ${CURRENT_BALANCE}
     ${current_value}=    Get Text    ${CURRENT_BALANCE}
     Should Be Equal    ${current_value}    0
 
     Withdraw    ${WEB_URL}    ${current_value}
 
-TC59: Bill Payment with Max- Amount
-    ${amount}    Set Variable    50
-    Login    ${WEB_URL}    ${WEB_BROWSER}    ${ACCOUNT_NUMBER}    ${PASSWORD} 
+TC61: Bill Payment with Max- Amount
+    ${amount}=    Set Variable    50
+    Login    ${WEB_URL}    ${WEB_BROWSER}    ${ACCOUNT_NUMBER}    ${PASSWORD}
     Deposit    ${WEB_URL}    ${amount}
 
     Sleep    1
@@ -162,7 +162,7 @@ TC59: Bill Payment with Max- Amount
     Click Button    ${BILL_PAYMENT_BTN}
 
     Sleep    2
-    Wait Until Element Is Visible   ${CURRENT_BALANCE}
+    Wait Until Element Is Visible    ${CURRENT_BALANCE}
     ${current_value}=    Get Text    ${CURRENT_BALANCE}
     Should Be Equal    ${current_value}    1
 

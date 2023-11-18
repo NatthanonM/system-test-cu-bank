@@ -1,7 +1,10 @@
 *** Settings ***
-Library    SeleniumLibrary
-Test Teardown    Close All Browsers
-Resource    ../common/commonKeywords.robot
+Library             SeleniumLibrary
+Resource            ../common/commonKeywords.robot
+
+Test Teardown       Close All Browsers
+
+
 *** Test Cases ***
 TC16: Successful login and Go to account page
     Open browser cubank login page
@@ -11,7 +14,7 @@ TC16: Successful login and Go to account page
     Click login button
     Wait account page load complete
 
-TC26: Successful Deposit (with min), Update database and Refresh page
+TC28: Successful Deposit (with min), Update database and Refresh page
     Open browser cubank login page
     Wait cubank login page load complete
     Input and verify account no
@@ -22,7 +25,7 @@ TC26: Successful Deposit (with min), Update database and Refresh page
     Click deposit button
     Reload Page
 
-TC27: Successful Deposit (with min+), Update database and Refresh page
+TC29: Successful Deposit (with min+), Update database and Refresh page
     Open browser cubank login page
     Wait cubank login page load complete
     Input and verify account no
@@ -33,7 +36,7 @@ TC27: Successful Deposit (with min+), Update database and Refresh page
     Click deposit button
     Reload Page
 
-TC28: Successful Deposit (with norm), Update database and Refresh page
+TC30: Successful Deposit (with norm), Update database and Refresh page
     Open browser cubank login page
     Wait cubank login page load complete
     Input and verify account no
@@ -44,7 +47,7 @@ TC28: Successful Deposit (with norm), Update database and Refresh page
     Click deposit button
     Reload Page
 
-TC32: Successful Withdraw (with min), Update database and Refresh page
+TC34: Successful Withdraw (with min), Update database and Refresh page
     Open browser cubank login page
     Wait cubank login page load complete
     Input and verify account no
@@ -55,7 +58,7 @@ TC32: Successful Withdraw (with min), Update database and Refresh page
     Click withdraw button
     Reload Page
 
-TC33: Successful Withdraw (with min+), Update database and Refresh page
+TC35: Successful Withdraw (with min+), Update database and Refresh page
     Open browser cubank login page
     Wait cubank login page load complete
     Input and verify account no
@@ -66,7 +69,7 @@ TC33: Successful Withdraw (with min+), Update database and Refresh page
     Click withdraw button
     Reload Page
 
-TC34: Successful Withdraw (with norm), Update database and Refresh page
+TC36: Successful Withdraw (with norm), Update database and Refresh page
     Open browser cubank login page
     Wait cubank login page load complete
     Input and verify account no
@@ -77,7 +80,7 @@ TC34: Successful Withdraw (with norm), Update database and Refresh page
     Click withdraw button
     Reload Page
 
-TC35: Successful Withdraw (with max-), Update database and Refresh page
+TC37: Successful Withdraw (with max-), Update database and Refresh page
     Open browser cubank login page
     Wait cubank login page load complete
     Input and verify account no
@@ -88,7 +91,7 @@ TC35: Successful Withdraw (with max-), Update database and Refresh page
     Click withdraw button
     Reload Page
 
-TC36: Successful Withdraw (with max), Update database and Refresh page
+TC38: Successful Withdraw (with max), Update database and Refresh page
     Open browser cubank login page
     Wait cubank login page load complete
     Input and verify account no
@@ -99,31 +102,31 @@ TC36: Successful Withdraw (with max), Update database and Refresh page
     Click withdraw button
     Reload Page
 
-TC39: Transfer Account Number is not number
+TC41: Transfer Account Number is not number
     Open browser cubank login page
     Wait cubank login page load complete
     Input and verify account no
     Input and verify account password
     Click login button
     Wait account page load complete
-    Input and verify non-numerical transfer account 
-    Input and verify transfer amount 
+    Input and verify non-numerical transfer account
+    Input and verify transfer amount
     Click transfer button
     Verify transfer error message non-numeric account
 
-TC40: Transfer Account No. digit is not equal to 10 (max-)
+TC42: Transfer Account No. digit is not equal to 10 (max-)
     Open browser cubank login page
     Wait cubank login page load complete
     Input and verify account no
     Input and verify account password
     Click login button
     Wait account page load complete
-    Input and verify wrong-digit transfer account 
-    Input and verify transfer amount 
+    Input and verify wrong-digit transfer account
+    Input and verify transfer amount
     Click transfer button
     Verify transfer error message wrong-digit account
 
-TC41: Transfer Account No. digit is not equal to 10 (max+)
+TC43: Transfer Account No. digit is not equal to 10 (max+)
     Open browser cubank login page
     Wait cubank login page load complete
     Input and verify account no
@@ -131,11 +134,11 @@ TC41: Transfer Account No. digit is not equal to 10 (max+)
     Click login button
     Wait account page load complete
     Input and verify wrong-digit_maxplus transfer account
-    Input and verify transfer amount 
+    Input and verify transfer amount
     Click transfer button
     Verify transfer error message wrong-digit account
 
-TC42: Transfer target Account is not found.
+TC44: Transfer target Account is not found.
     Open browser cubank login page
     Wait cubank login page load complete
     Input and verify account no
@@ -143,11 +146,11 @@ TC42: Transfer target Account is not found.
     Click login button
     Wait account page load complete
     Input and verify not found transfer account
-    Input and verify transfer amount 
+    Input and verify transfer amount
     Click transfer button
     Verify transfer error message not found account
 
-TC43: Cannot Transfer to your own account.
+TC45: Cannot Transfer to your own account.
     Open browser cubank login page
     Wait cubank login page load complete
     Input and verify account no
@@ -155,11 +158,11 @@ TC43: Cannot Transfer to your own account.
     Click login button
     Wait account page load complete
     Input and verify same transfer account
-    Input and verify transfer amount 
+    Input and verify transfer amount
     Click transfer button
     Verify transfer error message same account
 
-TC44: Transfer amount is invalid value (not integer).
+TC46: Transfer amount is invalid value (not integer).
     Open browser cubank login page
     Wait cubank login page load complete
     Input and verify account no
@@ -167,11 +170,11 @@ TC44: Transfer amount is invalid value (not integer).
     Click login button
     Wait account page load complete
     Input and verify transfer account
-    Input and verify invalid transfer amount 
+    Input and verify invalid transfer amount
     Click transfer button
-    Verify transfer error message invalid transfer amount 
+    Verify transfer error message invalid transfer amount
 
-TC45: Transfer amount is invalid value (min-).
+TC47: Transfer amount is invalid value (min-).
     Open browser cubank login page
     Wait cubank login page load complete
     Input and verify account no
@@ -179,11 +182,11 @@ TC45: Transfer amount is invalid value (min-).
     Click login button
     Wait account page load complete
     Input and verify transfer account
-    Input and verify non-number transfer amount 
+    Input and verify non-number transfer amount
     Click transfer button
-    Verify transfer error message non-number transfer amount 
+    Verify transfer error message non-number transfer amount
 
-TC50: Transfer balance is not enough (max+).
+TC52: Transfer balance is not enough (max+).
     Open browser cubank login page
     Wait cubank login page load complete
     Input and verify account no
@@ -191,6 +194,6 @@ TC50: Transfer balance is not enough (max+).
     Click login button
     Wait account page load complete
     Input and verify transfer account
-    Input and verify insufficient transfer amount 
+    Input and verify insufficient transfer amount
     Click transfer button
     Verify transfer error message insufficient transfer amount
