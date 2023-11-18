@@ -10,7 +10,7 @@ Test Teardown       Close All Browsers
 
 
 *** Test Cases ***
-Scenario9 test 1 widthdraw with not integer (TC16, TC26, TC30)
+S9.1: TC16 (login success), TC28 (deposit success min), TC32 (widthdraw failure input not integer)
     [Tags]    valid
     Open browser CU bank login
     Wait CU bank login load complete
@@ -24,9 +24,8 @@ Scenario9 test 1 widthdraw with not integer (TC16, TC26, TC30)
     Check balance
     Input widthdraw with not integer
     Click confirm widthdraw
-    sleep    5
 
-Scenario9 test 2 widthdraw with not integer (TC16, TC27, TC30)
+S9.2: TC16 (login success), TC29 (deposit success min+), TC32 (widthdraw failure input not integer)
     [Tags]    valid
     Open browser CU bank login
     Wait CU bank login load complete
@@ -40,9 +39,8 @@ Scenario9 test 2 widthdraw with not integer (TC16, TC27, TC30)
     Check balance
     Input widthdraw with not integer
     Click confirm widthdraw
-    sleep    5
 
-Scenario9 test 2 widthdraw with not integer (TC16, TC28, TC30)
+S9.3: TC16 (login success), TC30 (deposit success nom), TC32 (widthdraw failure input not integer)
     [Tags]    valid
     Open browser CU bank login
     Wait CU bank login load complete
@@ -56,9 +54,8 @@ Scenario9 test 2 widthdraw with not integer (TC16, TC28, TC30)
     Check balance
     Input widthdraw with not integer
     Click confirm widthdraw
-    sleep    5
 
-Scenario9 test 4 widthdraw with not integer (TC16, TC26, TC31)
+S9.4: TC16 (login success), TC28 (deposit success min), TC33 (widthdraw failure input not number min-)
     [Tags]    valid
     Open browser CU bank login
     Wait CU bank login load complete
@@ -72,9 +69,8 @@ Scenario9 test 4 widthdraw with not integer (TC16, TC26, TC31)
     Check balance
     Input widthdraw with zero number
     Click confirm widthdraw
-    sleep    5
 
-Scenario9 test 5 widthdraw with not integer (TC16, TC27, TC31)
+S9.5: TC16 (login success), TC29 (deposit success min+), TC33 (widthdraw failure input not number min-)
     [Tags]    valid
     Open browser CU bank login
     Wait CU bank login load complete
@@ -88,9 +84,8 @@ Scenario9 test 5 widthdraw with not integer (TC16, TC27, TC31)
     Check balance
     Input widthdraw with zero number
     Click confirm widthdraw
-    sleep    5
 
-Scenario9 test 6 widthdraw with not integer (TC16, TC28, TC31)
+S9.6: TC16 (login success), TC29 (deposit success nom), TC33 (widthdraw failure input not number min-)
     [Tags]    valid
     Open browser CU bank login
     Wait CU bank login load complete
@@ -104,4 +99,3 @@ Scenario9 test 6 widthdraw with not integer (TC16, TC28, TC31)
     Check balance
     Input widthdraw with zero number
     Click confirm widthdraw
-    sleep    5
