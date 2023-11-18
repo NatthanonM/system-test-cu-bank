@@ -8,7 +8,7 @@ Test Teardown       Close All Browsers
 
 
 *** Test Cases ***
-TC27: Deposit with min- Amount
+S3.1: TC16 (Login Success), TC27 (Deposit Failed with min- Amount)
     ${amount}    Set Variable    0
 
     Login    ${WEB_URL}    ${WEB_BROWSER}    ${ACCOUNT_NUMBER}    ${PASSWORD}
@@ -21,7 +21,7 @@ TC27: Deposit with min- Amount
     Wait Until Page Contains Element    //*[@cid='deposite-error-mes']
     Wait Until Page Contains    Please put only number
 
-TC31: Deposit with floating number Amount
+S3.2: TC16 (Login Success), TC31 (Deposit Failed with floating number Amount)
     ${amount}    Set Variable    19.89
 
     Login    ${WEB_URL}    ${WEB_BROWSER}    ${ACCOUNT_NUMBER}    ${PASSWORD}
