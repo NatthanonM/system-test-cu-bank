@@ -10,7 +10,7 @@ Test Teardown       Close All Browsers
 
 
 *** Test Cases ***
-S10.1: TC16 (login success), TC28 (deposit success min), TC40 (widthdraw success nom)
+S10.1: TC16 (login success), TC28 (deposit success min), TC40 (transfer success nom)
     [Tags]    valid
     Open browser CU bank login
     Wait CU bank login load complete
@@ -26,7 +26,7 @@ S10.1: TC16 (login success), TC28 (deposit success min), TC40 (widthdraw success
     Input transfer 25
     Click confirm transfer
 
-S10.2: TC16 (login success), TC28 (deposit success min), TC48 (widthdraw success min)
+S10.2: TC16 (login success), TC28 (deposit success min), TC48 (transfer success min)
     [Tags]    valid
     Open browser CU bank login
     Wait CU bank login load complete
@@ -42,7 +42,7 @@ S10.2: TC16 (login success), TC28 (deposit success min), TC48 (widthdraw success
     Input transfer 1
     Click confirm transfer
 
-S10.3: TC16 (login success), TC28 (deposit success min), TC49 (widthdraw success min+)
+S10.3: TC16 (login success), TC28 (deposit success min), TC49 (transfer success min+)
     [Tags]    valid
     Open browser CU bank login
     Wait CU bank login load complete
@@ -58,7 +58,7 @@ S10.3: TC16 (login success), TC28 (deposit success min), TC49 (widthdraw success
     Input transfer 2
     Click confirm transfer
 
-S10.4: TC16 (login success), TC28 (deposit success min), TC50 (widthdraw success max-)
+S10.4: TC16 (login success), TC28 (deposit success min), TC50 (transfer success max-)
     [Tags]    valid
     Open browser CU bank login
     Wait CU bank login load complete
@@ -74,7 +74,7 @@ S10.4: TC16 (login success), TC28 (deposit success min), TC50 (widthdraw success
     Input transfer 24
     Click confirm transfer
 
-S10.5: TC16 (login success), TC28 (deposit success min), TC51 (widthdraw success max)
+S10.5: TC16 (login success), TC28 (deposit success min), TC51 (transfer success max)
     [Tags]    valid
     Open browser CU bank login
     Wait CU bank login load complete
@@ -90,7 +90,7 @@ S10.5: TC16 (login success), TC28 (deposit success min), TC51 (widthdraw success
     Input transfer 25
     Click confirm transfer
 
-S10.6: TC16 (login success), TC29 (deposit success min+), TC40 (widthdraw success nom)
+S10.6: TC16 (login success), TC29 (deposit success min+), TC40 (transfer success nom)
     [Tags]    valid
     Open browser CU bank login
     Wait CU bank login load complete
@@ -106,7 +106,7 @@ S10.6: TC16 (login success), TC29 (deposit success min+), TC40 (widthdraw succes
     Input transfer 25
     Click confirm transfer
 
-S10.7: TC16 (login success), TC29 (deposit success min+), TC48 (widthdraw success min)
+S10.7: TC16 (login success), TC29 (deposit success min+), TC48 (transfer success min)
     [Tags]    valid
     Open browser CU bank login
     Wait CU bank login load complete
@@ -122,7 +122,7 @@ S10.7: TC16 (login success), TC29 (deposit success min+), TC48 (widthdraw succes
     Input transfer 1
     Click confirm transfer
 
-S10.8: TC16 (login success), TC29 (deposit success min+), TC49 (widthdraw success min+)
+S10.8: TC16 (login success), TC29 (deposit success min+), TC49 (transfer success min+)
     [Tags]    valid
     Open browser CU bank login
     Wait CU bank login load complete
@@ -138,7 +138,7 @@ S10.8: TC16 (login success), TC29 (deposit success min+), TC49 (widthdraw succes
     Input transfer 2
     Click confirm transfer
 
-S10.9: TC16 (login success), TC29 (deposit success min+), TC50 (widthdraw success max-)
+S10.9: TC16 (login success), TC29 (deposit success min+), TC50 (transfer success max-)
     [Tags]    valid
     Open browser CU bank login
     Wait CU bank login load complete
@@ -154,7 +154,7 @@ S10.9: TC16 (login success), TC29 (deposit success min+), TC50 (widthdraw succes
     Input transfer 24
     Click confirm transfer
 
-S10.10: TC16 (login success), TC29 (deposit success min+), TC51 (widthdraw success max)
+S10.10: TC16 (login success), TC29 (deposit success min+), TC51 (transfer success max)
     [Tags]    valid
     Open browser CU bank login
     Wait CU bank login load complete
@@ -171,7 +171,7 @@ S10.10: TC16 (login success), TC29 (deposit success min+), TC51 (widthdraw succe
     Click confirm transfer
 
 
-S10.11: TC16 (login success), TC30 (deposit success nom), TC40 (widthdraw success nom)
+S10.11: TC16 (login success), TC30 (deposit success nom), TC40 (transfer success nom)
     [Tags]    valid
     Open browser CU bank login
     Wait CU bank login load complete
@@ -186,10 +186,8 @@ S10.11: TC16 (login success), TC30 (deposit success nom), TC40 (widthdraw succes
     Input transfer target account id
     Input transfer 25
     Click confirm transfer
-    Scroll To Top Of Page
-    sleep    5
 
-S10.12: TC16 (login success), TC30 (deposit success nom), TC48 (widthdraw success min-)
+S10.12: TC16 (login success), TC30 (deposit success nom), TC48 (transfer success min-)
     [Tags]    valid
     Open browser CU bank login
     Wait CU bank login load complete
@@ -204,10 +202,8 @@ S10.12: TC16 (login success), TC30 (deposit success nom), TC48 (widthdraw succes
     Input transfer target account id
     Input transfer 1
     Click confirm transfer
-    Scroll To Top Of Page
-    sleep    5
 
-S10.13: TC16 (login success), TC30 (deposit success nom), TC49 (widthdraw success min)
+S10.13: TC16 (login success), TC30 (deposit success nom), TC49 (transfer success min)
     [Tags]    valid
     Open browser CU bank login
     Wait CU bank login load complete
@@ -222,10 +218,8 @@ S10.13: TC16 (login success), TC30 (deposit success nom), TC49 (widthdraw succes
     Input transfer target account id
     Input transfer 2
     Click confirm transfer
-    Scroll To Top Of Page
-    sleep    5
 
-S10.14: TC16 (login success), TC30 (deposit success nom), TC50 (widthdraw success max-)
+S10.14: TC16 (login success), TC30 (deposit success nom), TC50 (transfer success max-)
     [Tags]    valid
     Open browser CU bank login
     Wait CU bank login load complete
@@ -240,10 +234,8 @@ S10.14: TC16 (login success), TC30 (deposit success nom), TC50 (widthdraw succes
     Input transfer target account id
     Input transfer 24
     Click confirm transfer
-    Scroll To Top Of Page
-    sleep    5
 
-S10.15: TC16 (login success), TC30 (deposit success nom), TC51 (widthdraw success max)
+S10.15: TC16 (login success), TC30 (deposit success nom), TC51 (transfer success max)
     [Tags]    valid
     Open browser CU bank login
     Wait CU bank login load complete
@@ -258,5 +250,3 @@ S10.15: TC16 (login success), TC30 (deposit success nom), TC51 (widthdraw succes
     Input transfer target account id
     Input transfer 25
     Click confirm transfer
-    Scroll To Top Of Page
-    sleep    5
