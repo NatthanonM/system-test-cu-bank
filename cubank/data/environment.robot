@@ -18,7 +18,7 @@ ${test_data_transfer_24}                    24
 ${test_data_transfer_25}                    25
 ${test_data_error_message}                  your balance isn't not enough
 
-${ACCOUNT_NUMBER}                           1234567890
+${ACCOUNT_NUMBER}                           3000000000
 ${PASSWORD}                                 1234
 
 ${ACCOUNT_NUMBER_S3}                        7000000000
